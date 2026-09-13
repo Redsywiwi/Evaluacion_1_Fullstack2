@@ -27,3 +27,13 @@ Se añadió la base del proyecto, los cuales tienen lo siguiente
 
 - Vinculación de javascript interno
 </details>
+
+<details> 
+<summary><strong> v0.2.0 🐕🐕</strong></summary>
+Se avanzó en el desarrollo de la web con los siguientes cambios:
+<br/><br/>
+        
+- Mejor Estructura de archivos
+
+- Landing Page
+</details>
