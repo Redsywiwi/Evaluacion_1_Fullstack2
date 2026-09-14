@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+nav {
+    background-color: #222;
+    color: white;
+
+    padding: 15px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+nav button {
+    background: transparent;
+    color: white;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+nav button:hover {
+    background-color: #444;
+}
+
+
+
+.seccion {
+    display: none;
+
+    padding: 40px 20px;
+
+    min-height: calc(100vh - 70px);
+}
+
+.seccion.activa {
+    display: block;
+}
+
+
+
+.form-container {
+    background-color: white;
+
+    max-width: 500px;
+
+    margin: 20px auto;
+
+    padding: 35px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.form-container.grande {
+    max-width: 700px;
+}
+
+.form-container h1 {
+    margin-bottom: 10px;
+}
+
+.form-container > p {
+    margin-bottom: 25px;
+
+    color: #666;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+}
+
+
+
+label {
+    margin-top: 15px;
+    margin-bottom: 6px;
+
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #555;
+}
+
+.opciones {
+    display: flex;
+    gap: 25px;
+
+    margin-top: 5px;
+}
+
+.opciones label {
+    font-weight: normal;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 0;
+}
+
+.opciones input {
+    width: auto;
+}
+
+.btn-principal {
+    margin-top: 25px;
+
+    padding: 13px;
+
+    background-color: #222;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.btn-principal:hover {
+    background-color: #444;
+}
+
+.registro-link {
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+.registro-link button {
+    border: none;
+
+    background: none;
+
+    color: #333;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+
+.error {
+    color: #d00;
+
+    font-size: 14px;
+
+    margin-top: 8px;
+}
+small {
+    color: #666;
+
+    margin-top: 5px;
+}
+
+
+
+.popup {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.5);
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.popup.mostrar {
+    display: flex;
+}
+
+.popup-content {
+    background-color: white;
+
+    width: 90%;
+
+    max-width: 450px;
+
+    padding: 35px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.popup-content h2 {
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    line-height: 1.5;
+}
+
+.cerrar {
+    position: absolute;
+
+    top: 10px;
+    right: 18px;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .form-container {
+        padding: 25px 20px;
+    }
+
+    .opciones {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
