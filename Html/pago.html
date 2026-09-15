@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Finalizar Pago - Librería Siamés</title>
+        <link rel="icon" href="../imagenes/logo.png">
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Bootstrap JS -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../Js/sesion.js"></script>
+
+        <script src="../Js/stock.js"></script>
+
+        <script src="../Js/pago.js"></script>
+    </head>
+    <body class="bg-light">
+
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand text-primary" href="index.html">
+                    <i class="fa-solid fa-book me-2"></i><strong>Librería
+                        Siamés</strong>
+                </a>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="carrito.html"
+                        class="btn btn-outline-secondary btn-sm"><i
+                            class="fa-solid fa-arrow-left me-1"></i>Volver al
+                        Carrito</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm border-0 p-4 p-md-5">
+                        <h2 class="fw-bold mb-4"><i
+                                class="fa-solid fa-credit-card text-primary me-2"></i>Finalizar
+                            Compra</h2>
+
+                        <form id="formPago" novalidate>
+                            <!-- Selección de Entrega -->
+                            <h5 class="fw-bold mb-3 text-secondary">Método de
+                                Entrega</h5>
+                            <div class="mb-4">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio"
+                                        name="tipoEntrega" id="retiroTienda"
+                                        value="retiro" checked>
+                                    <label class="form-check-label fw-semibold"
+                                        for="retiroTienda">
+                                        Retiro en tienda <span
+                                            class="text-success fw-normal">(Gratis)</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"
+                                        name="tipoEntrega" id="envioDomicilio"
+                                        value="envio">
+                                    <label class="form-check-label fw-semibold"
+                                        for="envioDomicilio">
+                                        Envío a domicilio <span
+                                            class="text-muted fw-normal">(+
+                                            $2.000 CLP, o
+                                            <strong>¡Gratis</strong> en compras
+                                            desde $30.000!)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Dirección de Envío -->
+                            <div class="mb-4 d-none" id="contenedorDireccion">
+                                <label for="direccionEnvio"
+                                    class="form-label fw-semibold">Dirección de
+                                    despacho *</label>
+                                <textarea class="form-control"
+                                    id="direccionEnvio" rows="2"
+                                    placeholder="Calle, número, comuna..."></textarea>
+                            </div>
+
+                            <!-- Resumen de Costos -->
+                            <div class="bg-light p-3 rounded mb-4 border">
+                                <div
+                                    class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted">Subtotal
+                                        productos:</span>
+                                    <span id="pagoSubtotal"
+                                        class="fw-semibold">$0</span>
+                                </div>
+                                <div
+                                    class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted">Costo de
+                                        envío:</span>
+                                    <span id="pagoEnvio"
+                                        class="fw-semibold">$0</span>
+                                </div>
+                                <div
+                                    class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted">Fecha
+                                        estimada:</span>
+                                    <span id="pagoFechaEstimada"
+                                        class="fw-semibold text-primary">Calculando...</span>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="fw-bold mb-0">Total a Pagar:</h5>
+                                    <h5 class="fw-bold text-primary mb-0"
+                                        id="pagoTotal">$0</h5>
+                                </div>
+                            </div>
+
+                            <button type="submit"
+                                class="btn btn-primary w-100 py-3 fw-bold fs-5">
+                                <i class="fa-solid fa-lock me-2"></i>Confirmar y
+                                Pagar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Éxito -->
+        <div class="modal fade" id="modalPagoExitoso" data-bs-backdrop="static"
+            tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow">
+                    <div
+                        class="modal-header bg-success text-white border-bottom-0 pb-3">
+                        <h5 class="modal-title fw-bold"><i
+                                class="fa-solid fa-circle-check me-2"></i>¡Compra
+                            Exitosa!</h5>
+                    </div>
+                    <div class="modal-body py-4 text-center">
+                        <i class="fa-solid fa-bag-shopping text-success mb-3"
+                            style="font-size: 3rem;"></i>
+                        <p class="fs-5 text-dark mb-1"
+                            id="mensajeModalExito">¡Tu pedido ha sido registrado
+                            con éxito!</p>
+                        <p class="text-muted small mb-0">Puedes hacer el
+                            seguimiento de este pedido directamente desde tu
+                            panel en la sección "Mis Pedidos y Reservas".</p>
+                    </div>
+                    <div
+                        class="modal-footer border-top-0 pt-0 justify-content-center">
+                        <button type="button"
+                            class="btn btn-success px-5 fw-bold"
+                            onclick="window.location.href='Cliente/mis_pedidos.html'">Ver
+                            Mis Pedidos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

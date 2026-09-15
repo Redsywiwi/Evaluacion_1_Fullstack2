@@ -24,6 +24,8 @@
 
         <script
             src="../Js/index.js"></script>
+
+        <script src="../Js/sesion.js"></script>
     </head>
     <header>
         <!-- BARRA DE ANUNCIOS -->
@@ -54,14 +56,16 @@
                             <a class="nav-link active" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="productos.html">Productos</a>
+                            <a class="nav-link"
+                                href="productos.html">Productos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                 href="categorias.html">Categorías</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contacto">Contacto</a>
+                            <a class="nav-link"
+                                href="contacto.html">Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="blog.html">Blog</a>
@@ -76,7 +80,7 @@
                             class="text-dark text-decoration-none position-relative">
                             <i class="fa-solid fa-cart-shopping fs-5"></i>
                         </a>
-                        <a href="login_registro.html"
+                        <a href="login_registro.html" id="btnAuth"
                             class="btn btn-outline-primary btn-sm">Iniciar
                             Sesión</a>
                     </div>
@@ -371,7 +375,7 @@
                                     Susan E. Clark</span>
 
                                 <h5 class="card-title fs-6 fw-bold">Abejas - Una
-                                    Guía Para Curiosos
+                                    Guia Para Curiosos
                                     <span
                                         class="badge text-bg-danger ms-1">10%
                                         OFF</span>
@@ -481,41 +485,6 @@
             </div>
         </section>
 
-        <!-- CARACTERÍSTICAS / VENTAJAS -->
-        <section class="py-5 bg-white border-bottom">
-            <div class="container">
-                <div class="row text-center g-4">
-                    <div class="col-md-4">
-                        <div class="p-3">
-                            <i
-                                class="fa-solid fa-truck-fast text-primary fs-1 mb-3"></i>
-                            <h4 class="h5 fw-bold">Envíos Rápidos</h4>
-                            <p class="text-muted small mb-0">Despachos seguros a
-                                todo el país directo a tu puerta.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="p-3">
-                            <i
-                                class="fa-solid fa-shield-halved text-primary fs-1 mb-3"></i>
-                            <h4 class="h5 fw-bold">Compra Segura</h4>
-                            <p class="text-muted small mb-0">Protegemos tus
-                                datos y transacciones en todo momento.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="p-3">
-                            <i
-                                class="fa-solid fa-headset text-primary fs-1 mb-3"></i>
-                            <h4 class="h5 fw-bold">Soporte 24/7</h4>
-                            <p class="text-muted small mb-0">Atención
-                                personalizada para resolver todas tus dudas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- FOOTER -->
         <footer id="contacto" class="bg-dark text-white py-5">
             <div class="container">
@@ -528,16 +497,13 @@
                     <div class="col-md-4">
                         <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
                         <ul class="list-unstyled text-secondary small">
-                            <li class="mb-2"><a href="#"
-                                    class="text-decoration-none text-secondary">Preguntas
-                                    Frecuentes</a></li>
-                            <li class="mb-2"><a href="#"
+                            <li class="mb-2"><a href="nosotros.html"
                                     class="text-decoration-none text-secondary">Acerca
                                     de Nosotros</a></li>
-                            <li class="mb-2"><a href="#"
+                            <li class="mb-2"><a href="terminos_condiciones.html"
                                     class="text-decoration-none text-secondary">Términos
                                     y Condiciones</a></li>
-                            <li class="mb-2"><a href="#"
+                            <li class="mb-2"><a href="publicar.html"
                                     class="text-decoration-none text-secondary">Publica
                                     con Nosotros</a></li>
                         </ul>

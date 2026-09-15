@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi Cuenta - Librería Siamés</title>
+        <link rel="icon" href="../imagenes/logo.png">
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../Js/mi_cuenta.js"></script>
+    </head>
+    <body class="bg-light">
+
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand text-primary" href="index.html">
+                    <i class="fa-solid fa-book me-2"></i><strong>Librería
+                        Siamés</strong>
+                </a>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="index.html"
+                        class="btn btn-outline-secondary btn-sm">Volver al
+                        Inicio</a>
+                    <button id="btnCerrarSesion"
+                        class="btn btn-danger btn-sm">Cerrar Sesión</button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-sm border-0 p-4">
+                        <h2 class="fw-bold mb-3">Panel de Usuario</h2>
+                        <hr>
+                        <p class="fs-5 mb-1"><strong>ID de Cuenta:</strong>
+                            <span id="lblIdUsuario"
+                                class="text-primary fw-bold">-</span></p>
+                        <p class="fs-5 mb-1"><strong>Nombre:</strong> <span
+                                id="lblNombres"
+                                class="text-primary">-</span></p>
+                        <p class="fs-5 mb-1"><strong>Apellidos:</strong> <span
+                                id="lblApellidos"
+                                class="text-primary">-</span></p>
+                        <p class="fs-5 mb-1"><strong>Correo
+                                electrónico:</strong> <span id="lblCorreo"
+                                class="text-primary">-</span></p>
+                        <p class="fs-5"><strong>Rol asignado:</strong> <span
+                                id="lblTipo"
+                                class="badge bg-secondary">-</span></p>
+
+                        <!-- PANEL ADMINISTRADOR -->
+                        <div id="panelAdmin"
+                            class="alert alert-warning d-none mt-4 border border-warning shadow-sm">
+                            <h5 class="fw-bold text-dark"><i
+                                    class="fa-solid fa-shield-halved me-2"></i>Panel
+                                de Administrador</h5>
+                            <p class="mb-3 text-dark">Gestiona usuarios, revisa
+                                métricas y rentabilidad, administra proveedores
+                                y revisa solicitudes de publicación.</p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a href="Admin/dashboard.html"
+                                    class="btn btn-warning btn-sm fw-semibold"><i
+                                        class="fa-solid fa-chart-pie me-1"></i>Dashboard
+                                    y Reportes</a>
+                                <a href="Admin/gestion_usuarios.html"
+                                    class="btn btn-warning btn-sm fw-semibold"><i
+                                        class="fa-solid fa-users-gear me-1"></i>Gestión
+                                    de Usuarios</a>
+                                <a href="Inventario/gestion_stock.html"
+                                    class="btn btn-warning btn-sm fw-semibold"><i
+                                        class="fa-solid fa-boxes-stacked me-1"></i>Inventario</a>
+
+                                <a href="Admin/solicitudes_publicacion.html"
+                                    class="btn btn-warning btn-sm fw-semibold"><i
+                                        class="fa-solid fa-file-pdf me-1"></i>Solicitudes
+                                    de Publicación</a>
+                            </div>
+                        </div>
+
+                        <!-- PANEL VENDEDOR -->
+                        <div id="panelVendedor"
+                            class="alert alert-info d-none mt-4 border border-info shadow-sm">
+                            <h5 class="fw-bold text-dark"><i
+                                    class="fa-solid fa-store me-2"></i>Panel de
+                                Vendedor</h5>
+                            <p class="mb-3 text-dark">Consulta el stock en
+                                tiempo real</p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a href="Vendedor/consultar_stock.html"
+                                    class="btn btn-info text-white btn-sm fw-semibold">Consultar
+                                    Stock</a>
+                            </div>
+                        </div>
+
+                        <!-- PANEL ENCARGADO DE INVENTARIO -->
+                        <div id="panelInventario"
+                            class="alert alert-secondary d-none mt-4 border border-secondary shadow-sm">
+                            <h5 class="fw-bold text-dark"><i
+                                    class="fa-solid fa-boxes-stacked me-2"></i>Panel
+                                de Inventario</h5>
+                            <p class="mb-3 text-dark">Gestiona el stock de forma
+                                digital con actualización automática de las
+                                ventas y realiza conteos físicos.</p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a href="Inventario/gestion_stock.html"
+                                    class="btn btn-secondary btn-sm fw-semibold">Gestión
+                                    de Stock</a>
+
+                            </div>
+                        </div>
+
+                        <!-- PANEL ENCARGADO DE COMPRAS -->
+                        <div id="panelCompras"
+                            class="alert alert-primary d-none mt-4 border border-primary shadow-sm">
+                            <h5 class="fw-bold text-dark"><i
+                                    class="fa-solid fa-truck-fast me-2"></i>Panel
+                                de Compras</h5>
+                            <p class="mb-3 text-dark">Gestiona pedidos a
+                                proveedores de forma digital con seguimiento en
+                                tiempo real de la reposición.</p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a href="Compras/nuevo_pedido.html"
+                                    class="btn btn-primary btn-sm fw-semibold">Nuevo
+                                    Pedido</a>
+                                <a href="Compras/seguimiento_proveedores.html"
+                                    class="btn btn-primary btn-sm fw-semibold">Seguimiento
+                                    de Proveedores</a>
+                            </div>
+                        </div>
+
+                        <!-- PANEL CLIENTE (COMPRADOR) -->
+                        <div id="panelComprador"
+                            class="alert alert-success d-none mt-4 border border-success shadow-sm">
+                            <h5 class="fw-bold text-dark"><i
+                                    class="fa-solid fa-bag-shopping me-2"></i>Panel
+                                de Cliente</h5>
+                            <p class="mb-3 text-dark">Consulta el stock en
+                                línea, revisa el estado de tus compras y haz
+                                seguimiento de tus reservas.</p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a href="Cliente/mis_pedidos.html"
+                                    class="btn btn-success btn-sm fw-semibold">Mis
+                                    Pedidos y Reservas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </body>
+</html>

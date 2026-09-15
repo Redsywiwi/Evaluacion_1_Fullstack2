@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!-- ESTA PAGINA ES MI ORGULLO / DAVO -->
+<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -17,8 +17,10 @@
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        <script
-            src="../Js/detalle_producto.js"></script>
+        <!-- SCRIPTS -->
+        <script src="../Js/sesion.js"></script>
+        <script src="../Js/stock.js"></script>
+        <script src="../Js/detalle_producto.js"></script>
     </head>
     <body>
         <header>
@@ -42,34 +44,25 @@
                 </a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                                href="productos.html">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active"
-                                href="categorias.html">Categorías</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="productos.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link active"
+                                href="categorias.html">Categorías</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="blog.html">Blog</a></li>
                     </ul>
                     <div class="d-flex align-items-center gap-3">
                         <a href="#"
-                            class="text-dark text-decoration-none position-relative">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </a>
+                            class="text-dark text-decoration-none position-relative"><i
+                                class="fa-solid fa-magnifying-glass"></i></a>
                         <a href="#"
-                            class="text-dark text-decoration-none position-relative">
-                            <i class="fa-solid fa-cart-shopping fs-5"></i>
-                        </a>
-                        <a href="login_registro.html"
+                            class="text-dark text-decoration-none position-relative"><i
+                                class="fa-solid fa-cart-shopping fs-5"></i></a>
+                        <a href="login_registro.html" id="btnAuth"
                             class="btn btn-outline-primary btn-sm">Iniciar
                             Sesión</a>
                     </div>
@@ -96,19 +89,14 @@
                 <div class="col-lg-7">
                     <div
                         class="border rounded bg-white p-3 text-center mb-3 shadow-sm">
-                        <img id="imgPrincipal"
-                            src
-                            class="img-fluid rounded"
+                        <img id="imgPrincipal" src class="img-fluid rounded"
                             style="max-height: 440px; object-fit: contain;">
                     </div>
                     <!-- Miniaturas -->
                     <div class="d-flex gap-2">
-                        <img id="thumb1"
-                            src
+                        <img id="thumb1" src
                             class="img-thumbnail border-primary"
-                            style="width: 80px; height: 80px; object-fit: cover; cursor: pointer;"
-                            onclick="cambiarImagen(this.src)">
-
+                            style="width: 80px; height: 80px; object-fit: cover; cursor: pointer;">
                     </div>
                 </div>
 
@@ -117,18 +105,24 @@
                     class="col-lg-5 d-flex flex-column justify-content-between">
                     <div>
                         <div
-                            class="d-flex justify-content-between align-items-start border-bottom pb-3 mb-3">
+                            class="d-flex justify-content-between align-items-start border-bottom pb-2 mb-2">
                             <h2 class="fw-bold m-0" id="productoTitulo">Nombre
                                 Producto</h2>
                             <h3 class="text-primary fw-bold m-0 ms-3"
                                 id="productoPrecio">$0</h3>
                         </div>
 
+                        <!-- EL STOCK SE MUESTRA AQUÍ -->
+                        <p class="text-success small fw-bold mb-3"
+                            id="productoStock">
+                            <i class="fa-solid fa-box me-1"></i> Stock
+                            disponible: Cargando...
+                        </p>
+
                         <p class="text-muted small mb-4"
                             id="productoDescripcion">
-                            Ejemplar en perfecto estado, tapa blanda con solapas
-                            y papel de alta calidad. Incluye acceso inmediato al
-                            despacho express a domicilio.
+                            Ejemplar en perfecto estado. Incluye acceso
+                            inmediato al despacho express a domicilio.
                         </p>
 
                         <div class="d-flex align-items-center gap-3 mb-4">
@@ -191,7 +185,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a href="../Html/categorias.html#juegos-de-mesa">
+                        <a href="../Html/productos.html#juegos-de-mesa">
                             <div
                                 class="card h-100 border text-center p-2 shadow-sm">
                                 <img src="../imagenes/juegos/root.jpg"
