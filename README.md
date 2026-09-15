@@ -37,3 +37,25 @@ Se avanzó en el desarrollo de la web con los siguientes cambios:
 
 - Landing Page
 </details>
+
+<details> 
+<summary><strong> v0.3.0 🐕🐕</strong></summary>
+Se avanzó en el desarrollo de la web con los siguientes cambios:
+<br/><br/>
+        
+- Index ✅
+
+- Login / Registro (WIP)
+
+- Blog (WIP)
+
+- Categorias (WIP) Falta JS.
+
+- Productos (WIP) Falta JS.
+
+- Detalle producto (WIP) Falta JS.
+
+En general falta la parte de JavaScript que valida un inicio de sesión valido y poder añadir productos al carrito.
+
+
+</details>
