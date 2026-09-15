@@ -59,3 +59,36 @@ En general falta la parte de JavaScript que valida un inicio de sesión valido y
 
 
 </details>
+
+<details> 
+<summary><strong> v1.0.0 🐕🐕</strong></summary>
+Se avanzó lo mas posible basado en las figuras de las instrucciones:
+<br/><br/>
+        
+- <strong>Admin:</strong> Dashboard, Gestión de usuarios y Solicitudes de publicación 
+- <strong>Cliente:</strong> Mis pedidos 
+- <strong>Compras:</strong> Nuevo pedido y Seguimiento de productos 
+- <strong>Inventario:</strong> Gestion de Stock 
+- <strong>Vendedor:</strong> Consultar Stock 
+<br/><br/>
+- Login / Registro 
+- Mi cuenta 
+<br/><br/>
+- Index 
+  <br/><br/>
+- Categorias 
+- productos 
+- Carrito 
+- Pago 
+<br/><br/>
+
+- Contacto 
+- Blog 
+- Nosotros 
+<br/><br/>
+
+- Publicar con nosotros 
+- Términos y Condiciones
+
+
+</details>
