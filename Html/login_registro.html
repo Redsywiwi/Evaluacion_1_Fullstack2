@@ -1,292 +1,269 @@
 <!DOCTYPE html>
 <html lang="es">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Librería - Siamés</title>
+        <title>Iniciar Sesión / Registro - Librería Siamés</title>
         <link rel="icon" href="../imagenes/logo.png">
 
         <!-- Bootstrap CSS -->
-
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet">
-
-        <!-- Bootstrap JS -->
-
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
         <!-- Font Awesome -->
-
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="../Css/css.css">
+        <!-- Bootstrap JS -->
         <script
-            src="../Js/index.js"></script>
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../Js/login_registro.js"></script>
     </head>
+    <body class="bg-light">
 
-
-    <body>
+        <!-- NAVEGACIÓN -->
         <nav
             class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-primary"
-                    href="index.html">
+                <a class="navbar-brand text-primary" href="index.html">
                     <i class="fa-solid fa-book me-2"></i><strong>Librería
                         Siamés</strong>
                 </a>
+                <!-- BOTÓN DE LLENADO RÁPIDO -->
+
+                <div class="d-flex align-items-center gap-3">
+                    <button type="button"
+                        class="btn btn-sm btn-outline-success fw-bold"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalLlenarTest">
+                        <i
+                            class="fa-solid fa-bolt me-1"></i>Llenar
+                    </button>
+                    <a href="index.html"
+                        class="btn btn-outline-secondary btn-sm">Volver al
+                        Inicio</a>
+                </div>
             </div>
         </nav>
-        <main>
 
-            <section id="login" class="seccion activa">
+        <main class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
 
-                <div class="form-container">
+                    <!-- ALERTA DE MENSAJES GENERALES -->
+                    <div id="alertaMensaje" class="alert d-none"
+                        role="alert"></div>
 
-                    <h1>Iniciar sesión</h1>
-                    <p>Ingrese sus datos para continuar.</p>
+                    <!-- SECCIÓN LOGIN -->
+                    <section id="login" class="card shadow-sm border-0 d-block">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="fw-bold mb-1">Iniciar sesión</h2>
+                            <p class="text-muted mb-4">Ingrese sus credenciales
+                                para continuar.</p>
 
-                    <form id="loginForm">
-                        <label for="loginCorreo">
-                            Correo electrónico
-                        </label>
-                        <input type="email" id="loginCorreo" name="correo"
-                            placeholder="ejemplo@correo.com" required>
-                        <label for="loginPassword">
-                            Contraseña
-                        </label>
-                        <input type="password" id="loginPassword"
-                            name="password" placeholder="Ingrese su contraseña"
-                            required>
-                        <button type="submit" class="btn-principal">
-                            Iniciar sesión
-                        </button>
-                    </form>
-                    <p class="registro-link">
-                        ¿No tiene una cuenta?
-                        <button onclick="mostrarSeccion('registro')">
-                            Crear una cuenta
-                        </button>
-                    </p>
-                </div>
-            </section>
+                            <form id="loginForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="loginCorreo"
+                                        class="form-label fw-semibold">Correo
+                                        electrónico *</label>
+                                    <input type="email" class="form-control"
+                                        id="loginCorreo" maxlength="100"
+                                        placeholder="ejemplo@correo.com"
+                                        required>
+                                    <div class="invalid-feedback">Ingrese un
+                                        correo válido (ej.
+                                        texto@texto.com).</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword"
+                                        class="form-label fw-semibold">Contraseña
+                                        *</label>
+                                    <input type="password" class="form-control"
+                                        id="loginPassword"
+                                        placeholder="Ingrese su contraseña"
+                                        required>
+                                    <div class="invalid-feedback">La contraseña
+                                        es obligatoria.</div>
+                                </div>
 
-            <section id="registro" class="seccion">
-                <div class="form-container">
-                    <h1>Crear una cuenta</h1>
-                    <p>Complete todos los campos obligatorios.</p>
-                    <form id="registroForm">
-                        <label for="nombres">
-                            Nombres *
-                        </label>
-                        <input type="text" id="nombres" required>
-                        <label for="apellidos">
-                            Apellidos *
-                        </label>
-                        <input type="text" id="apellidos" required>
-                        <label for="rut">
-                            RUT *
-                        </label>
-                        <input type="text" id="rut" placeholder="Ingrese su RUT"
-                            required>
-                        <label for="direccion">
-                            Dirección *
-                        </label>
-                        <textarea id="direccion" rows="3"
-                            placeholder="Ingrese su dirección"
-                            required></textarea>
-                        <label for="sexo">
-                            Sexo
-                        </label>
-                        <select id="sexo">
-                            <option value>Prefiero no indicar</option>
-                            <option value="femenino">Femenino</option>
-                            <option value="masculino">Masculino</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                        <label for="registroCorreo">
-                            Correo electrónico *
-                        </label>
-                        <input type="email" id="registroCorreo"
-                            placeholder="ejemplo@correo.com" required>
-                        <label for="registroPassword">
-                            Contraseña *
-                        </label>
-                        <input type="password" id="registroPassword" required>
-                        <label for="confirmarPassword">
-                            Confirmar contraseña *
-                        </label>
-                        <input type="password" id="confirmarPassword" required>
-                        <p id="errorPassword" class="error"></p>
-                        <button type="submit" class="btn-principal">
-                            Crear cuenta
-                        </button>
-                    </form>
+                                <button type="submit"
+                                    class="btn btn-primary w-100 py-2 fw-bold">Iniciar
+                                    sesión</button>
+                            </form>
 
-                    <p class="registro-link">
-                        ¿Ya tiene una cuenta?
-                        <button onclick="mostrarSeccion('login')">
-                            Iniciar sesión
-                        </button>
-                    </p>
-                </div>
-            </section>
-
-            <section id="publica" class="seccion">
-                <div class="form-container grande">
-                    <h1>Publica con nosotros</h1>
-                    <p>
-                        Complete el siguiente formulario para solicitar
-                        una cotización para la impresión de su libro.
-                    </p>
-                    <form id="publicaForm">
-                        <!-- Datos personales -->
-                        <h3>Información de contacto</h3>
-                        <label for="nombrePublica">
-                            Nombre y apellidos *
-                        </label>
-                        <input type="text" id="nombrePublica" required>
-                        <label for="telefono">
-                            Número telefónico *
-                        </label>
-                        <input type="tel" id="telefono" placeholder="8888-8888"
-                            required>
-                        <label for="correoPublica">
-                            Correo electrónico *
-                        </label>
-                        <input type="email" id="correoPublica"
-                            placeholder="ejemplo@correo.com" required>
-
-                        <h3>Información del libro</h3>
-                        <label for="nombreLibro">
-                            Nombre del libro *
-                        </label>
-                        <input type="text" id="nombreLibro" required>
-                        <label>
-                            Tipo de tapa *
-                        </label>
-                        <div class="opciones">
-                            <label>
-                                <input type="radio" name="tapa" value="blanda"
-                                    required>
-                                Tapa blanda
-                            </label>
-
-                            <label>
-                                <input type="radio" name="tapa" value="dura">
-                                Tapa dura
-                            </label>
+                            <hr class="my-4">
+                            <p class="text-center mb-0">
+                                ¿No tiene una cuenta?
+                                <a class="text-decoration-none fw-bold"
+                                    onclick="mostrarSeccion('registro')">Crear
+                                    una cuenta</a>
+                            </p>
                         </div>
-                        <label>
-                            Tipo de papel *
-                        </label>
+                    </section>
 
-                        <div class="opciones">
-                            <label>
-                                <input type="radio" name="papel"
-                                    value="ahuesado" required>
-                                Papel bond ahuesado
-                            </label>
+                    <!-- SECCIÓN REGISTRO -->
+                    <section id="registro"
+                        class="card shadow-sm border-0 d-none">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="fw-bold mb-1">Crear una cuenta</h2>
+                            <p class="text-muted mb-4">Complete los campos para
+                                registrarse.</p>
 
-                            <label>
-                                <input type="radio" name="papel" value="blanco">
-                                Papel bond blanco
-                            </label>
+                            <form id="registroForm" novalidate>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-sm-6">
+                                        <label for="nombres"
+                                            class="form-label fw-semibold">Nombres
+                                            *</label>
+                                        <input type="text" class="form-control"
+                                            id="nombres" required>
+                                        <div class="invalid-feedback">Este campo
+                                            es obligatorio.</div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="apellidos"
+                                            class="form-label fw-semibold">Apellidos
+                                            *</label>
+                                        <input type="text" class="form-control"
+                                            id="apellidos" required>
+                                        <div class="invalid-feedback">Este campo
+                                            es obligatorio.</div>
+                                    </div>
+                                </div>
 
+                                <div class="mb-3">
+                                    <label for="rut"
+                                        class="form-label fw-semibold">RUT
+                                        *</label>
+                                    <input type="text" class="form-control"
+                                        id="rut" placeholder="12.345.678-9"
+                                        required>
+                                    <div class="invalid-feedback">El RUT es
+                                        obligatorio.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="direccion"
+                                        class="form-label fw-semibold">Dirección
+                                        *</label>
+                                    <textarea class="form-control"
+                                        id="direccion" rows="2"
+                                        required></textarea>
+                                    <div class="invalid-feedback">La dirección
+                                        es obligatoria.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="sexo"
+                                        class="form-label fw-semibold">Sexo
+                                        (Opcional)</label>
+                                    <select class="form-select" id="sexo">
+                                        <option value>Prefiero no
+                                            indicar</option>
+                                        <option
+                                            value="femenino">Femenino</option>
+                                        <option
+                                            value="masculino">Masculino</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="registroCorreo"
+                                        class="form-label fw-semibold">Correo
+                                        electrónico *</label>
+                                    <input type="email" class="form-control"
+                                        id="registroCorreo"
+                                        placeholder="ejemplo@gmail.com"
+                                        required>
+                                    <div class="invalid-feedback"
+                                        id="registroCorreoFeedback">
+                                        El correo es obligatorio y debe
+                                        pertenecer a @duoc.cl, @profesor.duoc.cl
+                                        o @gmail.com
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-sm-6">
+                                        <label for="registroPassword"
+                                            class="form-label fw-semibold">Contraseña
+                                            *</label>
+                                        <input type="password"
+                                            class="form-control"
+                                            id="registroPassword" required>
+                                        <div class="invalid-feedback">Debe tener
+                                            entre 4 y 10 caracteres.</div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="confirmarPassword"
+                                            class="form-label fw-semibold">Confirmar
+                                            *</label>
+                                        <input type="password"
+                                            class="form-control"
+                                            id="confirmarPassword" required>
+                                        <div class="invalid-feedback">Las
+                                            contraseñas no coinciden.</div>
+                                    </div>
+                                </div>
+
+                                <button type="submit"
+                                    class="btn btn-primary w-100 py-2 fw-bold">Crear
+                                    cuenta</button>
+                            </form>
+
+                            <hr class="my-4">
+                            <p class="text-center mb-0">
+                                ¿Ya tiene una cuenta?
+                                <a href="javascript:void(0)"
+                                    class="text-decoration-none fw-bold"
+                                    onclick="mostrarSeccion('login')">Iniciar
+                                    sesión</a>
+                            </p>
                         </div>
+                    </section>
 
-                        <label for="tamano">
-                            Tamaño del libro *
-                        </label>
-                        <select id="tamano" required>
-                            <option value>
-                                Seleccione un tamaño
-                            </option>
-                            <option value="15x21">
-                                15 x 21 cm
-                            </option>
-                            <option value="17x24">
-                                17 x 24 cm
-                            </option>
-                            <option value="21x29">
-                                21 x 29 cm
-                            </option>
-                            <option value="21x21">
-                                21 x 21 cm
-                            </option>
-                        </select>
-
-                        <label for="ejemplares">
-                            Cantidad de ejemplares *
-                        </label>
-                        <input type="number" id="ejemplares" min="1" required>
-                        <label for="paginas">
-                            Cantidad de páginas por ejemplar *
-                        </label>
-                        <input type="number" id="paginas" min="80" required>
-                        <small>
-                            Mínimo: 80 páginas por ejemplar.
-                        </small>
-                        <label>
-                            Impresión *
-                        </label>
-
-                        <div class="opciones">
-                            <label>
-                                <input type="radio" name="color" value="color"
-                                    required>
-                                A color
-                            </label>
-
-                            <label>
-                                <input type="radio" name="color"
-                                    value="blanco-negro">
-                                Blanco y negro
-                            </label>
-                        </div>
-
-                        <label for="observaciones">
-                            Observaciones
-                        </label>
-                        <textarea id="observaciones" rows="5"
-                            placeholder="Escriba cualquier observación adicional..."></textarea>
-
-                        <!-- PDF -->
-
-                        <label for="archivo">
-                            Archivo del libro (.PDF) *
-                        </label>
-                        <input type="file" id="archivo"
-                            accept=".pdf,application/pdf" required>
-                        <small>
-                            Únicamente se permiten archivos PDF.
-                        </small>
-                        <button type="submit" class="btn-principal">
-                            Solicitar cotización
-                        </button>
-                    </form>
                 </div>
-            </section>
+            </div>
         </main>
 
-        <div id="popup" class="popup">
-            <div class="popup-content">
-                <span class="cerrar" onclick="cerrarPopup()">
-                    &times;
-                </span>
-                <h2>¡Solicitud enviada!</h2>
-                <p>
-                    Su formulario fue enviado correctamente.
-                    Nos pondremos en contacto con usted para realizar
-                    la cotización.
-                </p>
-                <button onclick="cerrarPopup()" class="btn-principal">
-                    Aceptar
-                </button>
+        <!-- POPUP LLENADO RAPIDO -->
+        <div class="modal fade" id="modalLlenarTest" tabindex="1"
+            aria-labelledby="modalLlenarTestLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content border-0 shadow">
+                    <div
+                        class="modal-header bg-success text-white border-bottom-0 pb-2">
+                        <h5 class="modal-title fw-bold"
+                            id="modalLlenarTestLabel"><i
+                                class="fa-solid fa-bolt me-2"></i>Llenado
+                            rápido</h5>
+                        <button type="button" class="btn-close btn-close-white"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body py-4 d-flex flex-column gap-2">
+                        <button
+                            class="btn btn-outline-success w-100 fw-semibold text-start"
+                            onclick="llenarDatosTest('usuario@gmail.com', 'usuario')"><i
+                                class="fa-solid fa-user me-2"></i>Cliente</button>
+                        <button
+                            class="btn btn-outline-info w-100 fw-semibold text-start"
+                            onclick="llenarDatosTest('vendedor@duoc.cl', 'vendedor')"><i
+                                class="fa-solid fa-store me-2"></i>Vendedor</button>
+                        <button
+                            class="btn btn-outline-secondary w-100 fw-semibold text-start"
+                            onclick="llenarDatosTest('inventario@duoc.cl', 'inventario')"><i
+                                class="fa-solid fa-boxes-stacked me-2"></i>Inv.</button>
+                        <button
+                            class="btn btn-outline-primary w-100 fw-semibold text-start"
+                            onclick="llenarDatosTest('compras@duoc.cl', 'compras')"><i
+                                class="fa-solid fa-truck-fast me-2"></i>Compras</button>
+                        <button
+                            class="btn btn-outline-warning text-dark w-100 fw-semibold text-start"
+                            onclick="llenarDatosTest('admin@profesor.duoc.cl', 'admin')"><i
+                                class="fa-solid fa-shield-halved me-2"></i>Admin.</button>
+                    </div>
+                </div>
             </div>
         </div>
-
     </body>
 </html>

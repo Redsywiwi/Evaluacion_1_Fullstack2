@@ -23,4 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', redirigir);
         }
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const estaIniciado = localStorage.getItem("iniciado") === "true";
+        const btnAuth = document.getElementById("btnAuth");
+
+        if (estaIniciado && btnAuth) {
+            btnAuth.textContent = "Mi Cuenta";
+            btnAuth.href = "mi_cuenta.html";
+            btnAuth.className = "btn btn-primary btn-sm"; 
+        }
+    });
 });

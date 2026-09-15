@@ -21,6 +21,7 @@
 
         <script
             src="../Js/categorias.js""></script>
+        <script src="../Js/sesion.js"></script>
     </head>
     <body>
         <header>
@@ -56,7 +57,8 @@
                                 href="categorias.html">Categorías</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contacto">Contacto</a>
+                            <a class="nav-link"
+                                href="contacto.html">Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="blog.html">Blog</a>
@@ -71,7 +73,7 @@
                             class="text-dark text-decoration-none position-relative">
                             <i class="fa-solid fa-cart-shopping fs-5"></i>
                         </a>
-                        <a href="login_registro.html"
+                        <a href="login_registro.html" id="btnAuth"
                             class="btn btn-outline-primary btn-sm">Iniciar
                             Sesión</a>
                     </div>
@@ -111,25 +113,6 @@
                                     class="text-decoration-none text-dark d-block py-1">Chilenos</a></li>
                         </ul>
 
-                        
-
-                        <div class="mb-4">
-                            <h6 class="fw-bold small">Rango de Precios</h6>
-                            <label for="precioRango"
-                                class="form-label small text-muted">Desde $0
-                                hasta $100.000</label>
-                            <input type="range" class="form-range"
-                                id="precioRango" min="0" max="100000"
-                                step="1000">
-                            <div
-                                class="d-flex justify-content-between small text-muted">
-                                <span>$0</span>
-                                <span>$100.000</span>
-                            </div>
-                        </div>
-
-                        <button class="btn btn-primary btn-sm w-100">Aplicar
-                            Filtros</button>
                     </div>
                 </aside>
 
@@ -639,16 +622,13 @@
                     <div class="col-md-4">
                         <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
                         <ul class="list-unstyled text-secondary small">
-                            <li class="mb-2"><a href="#"
-                                    class="text-decoration-none text-secondary">Preguntas
-                                    Frecuentes</a></li>
-                            <li class="mb-2"><a href="#"
+                            <li class="mb-2"><a href="nosotros.html"
                                     class="text-decoration-none text-secondary">Acerca
                                     de Nosotros</a></li>
-                            <li class="mb-2"><a href="#"
+                            <li class="mb-2"><a href="terminos_condiciones.html"
                                     class="text-decoration-none text-secondary">Términos
                                     y Condiciones</a></li>
-                            <li class="mb-2"><a href="#"
+                            <li class="mb-2"><a href="publicar.html"
                                     class="text-decoration-none text-secondary">Publica
                                     con Nosotros</a></li>
                         </ul>
